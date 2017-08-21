@@ -33,8 +33,7 @@
               <li class="list-group-item text-center"><a href="https://www.lincoln.ac.uk/home/">University of Lincoln Page</a></li>
               <li class="list-group-item text-center"><a href="http://lcas.lincoln.ac.uk/wp/">L-CAS Homepage</a></li>
               <li class="list-group-item text-center"><a href="https://scholar.google.co.uk/citations?user=MLYdvnwAAAAJ&hl=en&oi=pll">Google Scholar Homepage</a></li>
-            </ul>
-      	  </div>
+            </ul> </div>
           <div class="row center-block text-center" style="padding: 0px 0px 25px 0px;">
             <p> 
               Lincoln Centre for Autonomous Systems,<br>
@@ -68,7 +67,7 @@
 	  </div>
         </div>
         <div class="col-md-9 col-md-offset-0 col-xs-10 col-xs-offset-1">
-      		<div class="row">
+	  <div class="row">
             <nav class="navbar navbar-default" role="navigation">
               <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -80,36 +79,34 @@
                   <ul class="nav navbar-nav">
 		    <li><a href="{% url 'projects' %}">Projects</a></li>
 		    <li><a href="{% url 'publications' %}">Publications</a></li>
+		    {% if user.is_authenticated %}
+		    <li><a href="{% url 'logout' %}?next={{ request.path }}">Sign out</a></li>
+		    {% else %}
+		    {% if login_error %}
+		    <li data-toggle="modal" data-target="#sign-in-modal-error"><a href="#">Sign in</a></li>
+		    {% else %}
 		    <li data-toggle="modal" data-target="#sign-in-modal"><a href="#">Sign in</a></li>
+		    {% endif %}
+		    {% endif %}
 		    <div id="sign-in-modal" class="modal fade" role="dialog">
 		      <div class="modal-dialog">
 			<!-- Modal content-->
 		        <div class="modal-content">
-			    <form method="post" action="{% url 'login' %}">
-		          <div class="modal-header">
-		            <button type="button" class="close" data-dismiss="modal">&times;</button>
-		            <h4 class="modal-title">Login</h4>
-		            {% if form.errors %} 
-			      <p>Login Error: Please check your username/password combination.</p>
-			    {% endif %}
-		          </div>
-		          <div class="modal-body">
-			    {% csrf_token %}
-			    {% if next %}
- 			      <input type="hidden" name="next" value="{{ next }}" />
-			    {% endif %}
-			    <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
-			    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-			    <!--<td>{{ form.username.label_tag }}</td>-->
-			    <!--<td>{{ form.username }}</td>-->
-			    <!--<td>{{ form.password.label_tag }}</td>-->
-			    <!--<td>{{ form.password }}</td>-->
-      		          </div>
-		          <div class="modal-footer">
+			  <form method="post" action="{% url 'login' %}?next={{ request.path }}">
+		            <div class="modal-header">
+		              <button type="button" class="close" data-dismiss="modal">&times;</button>
+		              <h4 class="modal-title">Login</h4>
+  		            </div>
+		            <div class="modal-body">
+			      {% csrf_token %}
+			      <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+			      <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+      		            </div>
+		            <div class="modal-footer">
 			    <!--<button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>-->
-			    <input class="btn btn-default" type="submit" data-dismiss="modal" value="Submit"/>
-		          </div>
-			    </form>
+			      <input class="btn btn-default" type="submit" value="Submit"/>
+		            </div>
+			  </form>
 		        </div>
 		      </div>
 		    </div>
@@ -118,11 +115,8 @@
               </div>
             </nav>
           </div>
-
 	  {% block content %}
-
 	  {% endblock %}
-
         </div>
       </div>
     </div>
