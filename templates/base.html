@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+<html>
+  <head>
+    <title>{{ page.title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- link to main stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+    {% block extrahead %}
+    {% endblock %}
+  </head>
+  <body style="padding: 0px 0px 80px 0px; overflow-x: hidden;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1 col-xs-12">
+          <div class="jumbotron" style="margin-bottom: 0px; background-color: transparent; padding: 24px 0px 24px 0px;">
+	    <img class="img-responsive center-block" src="{% static 'info/media/tango_header1.png' %}" width="100%">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-6 col-xs-offset-3">
+          <div class="row" style="padding: 0px 0px 25px 0px;">
+	    <img class="img-rounded img-responsive center-block" src="{% static 'info/media/profile_small.jpg' %}" width="60%">  
+          </div>
+          <div class="row center-block" style="padding: 0px 0px 0px 0px;"> 
+            <ul class="list-group">
+              <li class="list-group-item text-center"><a href="https://www.lincoln.ac.uk/home/">University of Lincoln Page</a></li>
+              <li class="list-group-item text-center"><a href="http://lcas.lincoln.ac.uk/wp/">L-CAS Homepage</a></li>
+              <li class="list-group-item text-center"><a href="https://scholar.google.co.uk/citations?user=MLYdvnwAAAAJ&hl=en&oi=pll">Google Scholar Homepage</a></li>
+            </ul>
+      	  </div>
+          <div class="row center-block text-center" style="padding: 0px 0px 25px 0px;">
+            <p> 
+              Lincoln Centre for Autonomous Systems,<br>
+      	      School of Computer Science<br>
+	      Brayford Pool<br>
+      	      University of Lincoln, UK<br>
+	    </p>
+    	    <p>
+              Office: INB 3023<br>
+  	      Telephone: +44 (0)5122 886897<br>
+    	    </p>
+	  </div>
+          <div class="row center-block" style="padding: 0px 0px 25px 0px;">
+            <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-md-10 col-md-offset-1"> 
+            <a class="btn btn-social-icon btn-github" href="mailto:jlock@lincoln.ac.uk?Subject=Hi" target="_top">
+              <span class="fa fa-envelope"></span>
+            </a>
+            <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/jayceelock">
+              <span class="fa fa-twitter"></span>
+            </a>
+            <a class="btn btn-social-icon btn-github" href="http://github.com/jayceelock">
+              <span class="fa fa-github"></span>
+            </a>
+            <a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/in/jaycee-lock-b2784696/">
+              <span class="fa fa-linkedin"></span>
+            </a>
+            <a class="btn btn-social-icon btn-google" href="https://plus.google.com/u/0/108013586658668334600">
+              <span class="fa fa-google"></span>
+            </a>
+            </div>
+	  </div>
+        </div>
+        <div class="col-md-9 col-md-offset-0 col-xs-10 col-xs-offset-1">
+      		<div class="row">
+            <nav class="navbar navbar-default" role="navigation">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+		  <a class="navbar-brand" href="{% url 'home' %}">Home</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+		    <li><a href="{% url 'projects' %}">Projects</a></li>
+		    <li><a href="{% url 'publications' %}">Publications</a></li>
+		    <li data-toggle="modal" data-target="#sign-in-modal"><a href="#">Sign in</a></li>
+		    <div id="sign-in-modal" class="modal fade" role="dialog">
+		      <div class="modal-dialog">
+			<!-- Modal content-->
+		        <div class="modal-content">
+			    <form method="post" action="{% url 'login' %}">
+		          <div class="modal-header">
+		            <button type="button" class="close" data-dismiss="modal">&times;</button>
+		            <h4 class="modal-title">Login</h4>
+		            {% if form.errors %} 
+			      <p>Login Error: Please check your username/password combination.</p>
+			    {% endif %}
+		          </div>
+		          <div class="modal-body">
+			    {% csrf_token %}
+			    {% if next %}
+ 			      <input type="hidden" name="next" value="{{ next }}" />
+			    {% endif %}
+			    <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+			    <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+			    <!--<td>{{ form.username.label_tag }}</td>-->
+			    <!--<td>{{ form.username }}</td>-->
+			    <!--<td>{{ form.password.label_tag }}</td>-->
+			    <!--<td>{{ form.password }}</td>-->
+      		          </div>
+		          <div class="modal-footer">
+			    <!--<button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>-->
+			    <input class="btn btn-default" type="submit" data-dismiss="modal" value="Submit"/>
+		          </div>
+			    </form>
+		        </div>
+		      </div>
+		    </div>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+
+	  {% block content %}
+
+	  {% endblock %}
+
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </body>
+</html>
