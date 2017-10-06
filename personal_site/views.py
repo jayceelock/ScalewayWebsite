@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, logout, login
+from django.urls import reverse
+from django.core.urlresolvers import resolve
 
 def user_login(request):
     username = request.POST['username']
@@ -14,7 +16,8 @@ def user_login(request):
         login(request, user)
         return redirect(next_page)
     else:
-        return render(request, next_page + 'login', {'login_error': True})
+        return redirect(next_page)# return resolve(next_page)[0]
+        # return render(request, resolve(next_page)[0], {'login_error': True})
 
 def user_logout(request):
     logout(request)

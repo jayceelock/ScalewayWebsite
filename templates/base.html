@@ -80,21 +80,18 @@
 		    <li><a href="{% url 'projects' %}">Projects</a></li>
 		    <li><a href="{% url 'publications' %}">Publications</a></li>
 		    {% if user.is_authenticated %}
-		    <li><a href="{% url 'logout' %}?next={{ request.path }}">Sign out</a></li>
+		      <li><a href="{% url 'logout' %}?next={{ request.path }}">Sign out</a></li>
 		    {% else %}
-		    {% if login_error %}
-		    <li data-toggle="modal" data-target="#sign-in-modal-error"><a href="#">Sign in</a></li>
-		    {% else %}
-		    <li data-toggle="modal" data-target="#sign-in-modal"><a href="#">Sign in</a></li>
+		      <li data-toggle="modal" data-target="#sign-in-modal"><a href="#">Sign in</a></li>
 		    {% endif %}
-		    {% endif %}
-		    <div id="sign-in-modal" class="modal fade" role="dialog">
+		    <div id="sign-in-modal" id="myForm" class="modal fade" role="dialog">
 		      <div class="modal-dialog">
 			<!-- Modal content-->
 		        <div class="modal-content">
-			  <form method="post" action="{% url 'login' %}?next={{ request.path }}">
+			  <form id="login-form" method="post" action="{% url 'login' %}?next={{ request.path }}">
 		            <div class="modal-header">
 		              <button type="button" class="close" data-dismiss="modal">&times;</button>
+			      <p id="Errors" style="visibility: hidden;"> ERROR </p>
 		              <h4 class="modal-title">Login</h4>
   		            </div>
 		            <div class="modal-body">
@@ -104,7 +101,7 @@
       		            </div>
 		            <div class="modal-footer">
 			    <!--<button type="submit" class="btn btn-default" data-dismiss="modal">Submit</button>-->
-			      <input class="btn btn-default" type="submit" value="Submit"/>
+			      <input id="button" class="btn btn-default" type="submit" value="Submit"/>
 		            </div>
 			  </form>
 		        </div>
@@ -122,5 +119,12 @@
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+      $('button').on('click', function() {
+	if ($('login-form').valid()) {
+	  $('sign-in-modal').modal('toggle');
+	}
+      });
+    </script>
   </body>
 </html>
