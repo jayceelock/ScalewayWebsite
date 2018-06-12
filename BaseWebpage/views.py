@@ -5,10 +5,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home(request):
-    return render(request, 'info/home.html', {})
+    return render(request, 'BaseWebpage/home.html', {})
 
 def projects(request):
-    return render(request, 'info/projects.html', {})
+    return render(request, 'BaseWebpage/projects.html', {})
 
 def publications(request):
-    return render(request, 'info/publications.html', {})
+    return render(request, 'BaseWebpage/publications.html', {})
