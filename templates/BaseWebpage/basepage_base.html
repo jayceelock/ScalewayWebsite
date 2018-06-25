@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block sidebar_content %}
+
+<div class="col-xs-6 col-xs-offset-3 col-sm-8 col-sm-offset-2 col-md-3 col-md-offset-0 col-md-pull-9">
+  <div class="row text-center hidden-sm hidden-xs" style="padding: 0px 0px 0px 0px;">
+    <img class="img-rounded img-responsive center-block" src="{% static 'ScalewayWebsite/profile_small.jpg' %}" width="60%">  
+  </div>
+  <div class="row text-center" style="padding: 25px 25px 25px 25px;"> 
+    <ul class="list-group">
+      <li class="list-group-item text-center"><a href="https://lcas.github.io/ActiVis/">ActiVis Homepage</a></li>
+      <li class="list-group-item text-center"><a href="http://staff.lincoln.ac.uk/105dd256-cd56-482d-a540-da542d70a951">University of Lincoln Staff Page</a></li>
+      <li class="list-group-item text-center"><a href="https://scholar.google.co.uk/citations?user=MLYdvnwAAAAJ&hl=en&oi=pll">Google Scholar Homepage</a></li>
+    </ul>
+  </div>
+  <div class="row text-center" style="padding: 0px 0px 25px 0px;">
+    <p> 
+      Lincoln Centre for Autonomous Systems,<br>
+      School of Computer Science<br>
+      Brayford Pool<br>
+      University of Lincoln, UK<br>
+    </p>
+    <p>
+      Office: INB 3023<br>
+      Telephone: +44 (0)5122 886897<br>
+    </p>
+  </div>
+  <div class="row text-center" style="padding: 0%;"> 
+    <div class="col-md-12"> 
+      <a class="btn btn-social-icon btn-github" href="mailto:jlock@lincoln.ac.uk?Subject=Hi" target="_top">
+	<span class="fa fa-envelope"></span>
+      </a>
+      <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/jayceelock">
+	<span class="fa fa-twitter"></span>
+      </a>
+      <a class="btn btn-social-icon btn-github" href="http://github.com/jayceelock">
+	<span class="fa fa-github"></span>
+      </a>
+      <a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/in/jacobus-lock/">
+	<span class="fa fa-linkedin"></span>
+      </a>
+      <a class="btn btn-social-icon btn-google" href="https://plus.google.com/u/0/+JacobusLock">
+	<span class="fa fa-google"></span>
+      </a>
+    </div>
+  </div>
+</div>
+	
+{% endblock %}
