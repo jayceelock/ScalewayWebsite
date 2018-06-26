@@ -25,7 +25,7 @@ SECRET_KEY = 'dgwvdiyznr$dsc^=h4q15+u83^v=y!x$i6js!%h69k)w)2+xf6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jclock.co.uk', ]
 
 
 # Application definition
