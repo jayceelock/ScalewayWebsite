@@ -26,7 +26,8 @@ SECRET_KEY = 'dgwvdiyznr$dsc^=h4q15+u83^v=y!x$i6js!%h69k)w)2+xf6'
 DEBUG = False
 
 ALLOWED_HOSTS = ['jclock.co.uk',
-                 '127.0.0.1', ]
+                 '127.0.0.1', 
+		 '51.15.140.150', ]
 
 
 # Application definition
@@ -121,4 +122,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = ( os.path.join('media'), )
+STATICFILES_DIRS = ( os.path.join('static'), )
