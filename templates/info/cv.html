@@ -1,5 +1,11 @@
 {% extends 'info/info_base.html' %}
 
+{% block extrahead %}
+
+<title>Curriculum Vitae</title>
+
+{% endblock %}
+
 {% load staticfiles %}
 
 {% block content %}
@@ -8,8 +14,6 @@
   <div class="page-header">
     <h1>Curriculum Vitae</h1>
   </div>
-</div>
-<div class="row">
   <div class="col-md-12">
     <a href="{% static 'info/cv/cv.pdf' %}">
       <img src="{% static 'info/cv/cv.png' %}" class="img-responsive" width="100%">
