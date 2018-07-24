@@ -11,64 +11,32 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+    <meta name="description" content="A webpage for Jacobus Lock."/>
     {% block extrahead %}
     {% endblock %}
   </head>
   <body style="padding: 0px 0px 80px 0px; overflow-x: hidden;">
     <div class="container">
       <div class="row">
-        <div class="col-md-10 col-md-offset-1 col-xs-12">
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
           <div class="jumbotron" style="margin-bottom: 0px; background-color: transparent; padding: 24px 0px 24px 0px;">
 	    <img class="img-responsive center-block" src="{% static 'info/media/tango_header1.png' %}" width="100%">
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3 col-md-offset-0 col-sm-8 col-sm-offset-2 col-xs-6 col-xs-offset-3">
-          <div class="row" style="padding: 0px 0px 25px 0px;">
-	    <img class="img-rounded img-responsive center-block" src="{% static 'info/media/profile_small.jpg' %}" width="60%">  
-          </div>
-          <div class="row center-block" style="padding: 0px 0px 0px 0px;"> 
-            <ul class="list-group">
-              <li class="list-group-item text-center"><a href="http://lcas.lincoln.ac.uk/wp/">L-CAS Homepage</a></li>
-              <li class="list-group-item text-center"><a href="https://scholar.google.co.uk/citations?user=MLYdvnwAAAAJ&hl=en&oi=pll">Google Scholar Homepage</a></li>
-            </ul> </div>
-	  <div class="row center-block text-center">
-            <p> 
-              Lincoln Centre for Autonomous Systems,<br>
-      	      School of Computer Science<br>
-      	      University of Lincoln, UK<br>
-	    </p>
-    	    <p>
-  	      Telephone: +44 (0)5122 886897<br>
-    	    </p>
-	  </div>
-          <div class="row center-block text-center">
-            <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-md-10 col-md-offset-1"> 
-	      <a class="btn btn-social-icon btn-github" href="mailto:jlock@lincoln.ac.uk?Subject=Hi" target="_top">
-		<span class="fa fa-envelope"></span>
-	      </a>
-	      <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/jayceelock">
-		<span class="fa fa-twitter"></span>
-	      </a>
-	      <a class="btn btn-social-icon btn-github" href="http://github.com/jayceelock">
-		<span class="fa fa-github"></span>
-	      </a>
-	      <a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/in/jaycee-lock-b2784696/">
-		<span class="fa fa-linkedin"></span>
-	      </a>
-	      <a class="btn btn-social-icon btn-instagram" href="https://www.instagram.com/jayceelock">
-		<span class="fa fa-instagram"></span>
-	      </a>
-            </div>
-	  </div>
-        </div>
-        <div class="col-md-9 col-md-offset-0 col-xs-10 col-xs-offset-1">
+        <div class="col-md-9 col-md-offset-0 col-xs-10 col-xs-offset-1 col-md-push-3">
 	  <div class="row">
             <nav class="navbar navbar-default" role="navigation">
               <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+		  </button>
 		  <a class="navbar-brand" href="{% url 'home' %}">Home</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -88,16 +56,11 @@
 	  {% block content %}
 	  {% endblock %}
         </div>
+	{% block sidebar_content %}
+	{% endblock %}
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script>
-      $('button').on('click', function() {
-	if ($('login-form').valid()) {
-	  $('sign-in-modal').modal('toggle');
-	}
-      });
-    </script>
   </body>
 </html>
