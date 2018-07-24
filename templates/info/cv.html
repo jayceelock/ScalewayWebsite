@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="row">
+  <div class="page-header">
+    <h1>Curriculum Vitae</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <a href="{% static 'info/cv/cv.pdf' %}">
+      <img src="{% static 'info/cv/cv.png' %}" class="img-fluid">
+    </a>
+  </div>
+</div>
+
+{% endblock %}
