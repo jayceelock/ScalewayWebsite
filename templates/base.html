@@ -3,7 +3,8 @@
 {% load staticfiles %}
 <html>
   <head>
-    <title>{{ page.title }}</title>
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- link to main stylesheet -->
@@ -20,7 +21,7 @@
       <div class="row">
         <div class="col-xs-12 col-md-10 col-md-offset-1">
           <div class="jumbotron" style="margin-bottom: 0px; background-color: transparent; padding: 24px 0px 24px 0px;">
-	    <img class="img-responsive center-block" src="{% static 'info/media/tango_header1.png' %}" width="100%">
+	    <img class="img-responsive center-block" src="{% static 'info/media/tango_header1.png' %}" alt="Jacobus Lock" width="100%">
           </div>
         </div>
       </div>
@@ -42,11 +43,11 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
+		    <li><a href="{% url 'about' %}">About Me</a></li>
+		    <li><a href="{% url 'blog' %}">Blog</a></li>
 		    <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
 		    <li><a href="{% url 'publications' %}">Publications</a></li>
 		    <li><a href="{% url 'cv' %}">CV</a></li>
-		    <li><a href="{% url 'blog' %}">Blog</a></li>
-		    <li><a href="{% url 'about' %}">About Me</a></li>
 		    <!--<li><a href="{% url 'contact' %}">Contact</a></li>-->
                   </ul>
                 </div>
