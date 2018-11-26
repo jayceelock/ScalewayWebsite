@@ -1,6 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'BaseWebpage/basepage_base.html' %}
 
 {% load static %}
+
+{% block extrahead %}
+
+<title>Publications</title>
+
+{% endblock %}
 
 {% block content %}
 
@@ -30,6 +36,29 @@
             <div class="panel-footer">
               <p>
                 Available <a target="_blank" href="https://www.aaai.org/ocs/index.php/SSS/SSS17/paper/view/15311">here</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End of paper div -->
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h5 class="panel-title">
+              <a data-toggle="collapse" href="#published2">
+                An investigation into multi-dimensional prediction models to estimate the pose error of a quadcopter in a CSP plant setting, <i>by Jacobus C. Lock, Willem J. Smit, Johann Treurnicht</i>
+              </a>
+            </h5>
+          </div>
+          <div id="published2" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p class="text-justify">
+              <b>Abstract: </b>The Solar Thermal Energy Research Group (STERG) is investigating ways to make heliostats cheaper to reduce the total cost of a concentrating solar power (CSP) plant. One avenue of research is to use unmanned aerial vehicles (UAVs) to automate and assist with the heliostat calibration process. To do this, the pose estimation error of each UAV must be determined and integrated into a calibration procedure. A computer vision (CV) system is used to measure the pose of a quadcopter UAV. However, this CV system contains considerable measurement errors. Since this is a high-dimensional problem, a sophisticated prediction model must be used to estimate the measurement error of the CV system for any given pose measurement vector. This paper attempts to train and validate such a model with the aim of using it to determine the pose error of a quadcopter in a CSP plant setting.
+              </p>
+            </div>
+            <div class="panel-footer">
+              <p>
+                Available <a target="_blank" href="http://aip.scitation.org/doi/abs/10.1063/1.4949222">here</a>
               </p>
             </div>
           </div>

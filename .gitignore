@@ -12,3 +12,7 @@ tests/coverage_html/
 tests/.coverage
 build/
 tests/report/
+personal_site_virtualenv/
+
+db.sqlite3
+static/
