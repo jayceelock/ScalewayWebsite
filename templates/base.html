@@ -3,6 +3,8 @@
 {% load staticfiles %}
 <html>
   <head>
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- link to main stylesheet -->
@@ -16,16 +18,16 @@
   </head>
   <body style="padding: 0px 0px 80px 0px; overflow-x: hidden;">
     <div class="container">
-      <div class="row"> <!-- Jumbotron row -->
-        <div class="col-md-10 col-md-offset-1 col-xs-12">
+      <div class="row">
+        <div class="col-xs-12 col-md-10 col-md-offset-1">
           <div class="jumbotron" style="margin-bottom: 0px; background-color: transparent; padding: 24px 0px 24px 0px;">
-	    <img class="img-responsive center-block" src="{% static 'ScalewayWebsite/tango_header1.png' %}" width="100%">
+	    <img class="img-responsive center-block" src="{% static 'info/media/tango_header1.png' %}" alt="Jacobus Lock" width="100%">
           </div>
         </div>
-      </div> <!-- End of jumbotron -->
-      <div class="row"> <!-- Start of content row -->
+      </div>
+      <div class="row">
         <div class="col-md-9 col-md-offset-0 col-xs-10 col-xs-offset-1 col-md-push-3">
-          <div class="row">
+	  <div class="row">
             <nav class="navbar navbar-default" role="navigation">
               <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -35,23 +37,26 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                  </button>
+		  </button>
 		  <a class="navbar-brand" href="{% url 'home' %}">Home</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav">
-		    <li><a href="{% url 'projects' %}">Projects</a></li>
+		    <li><a href="{% url 'about' %}">About Me</a></li>
+		    <li><a href="{% url 'blog' %}">Blog</a></li>
+		    <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
 		    <li><a href="{% url 'publications' %}">Publications</a></li>
-		    <li><a href="{% url 'blog_posts' %}">Blog</a></li>
+		    <li><a href="{% url 'cv' %}">CV</a></li>
+		    <!--<li><a href="{% url 'contact' %}">Contact</a></li>-->
                   </ul>
                 </div>
               </div>
             </nav>
-	  </div>
+          </div>
 	  {% block content %}
 	  {% endblock %}
-	</div>
+        </div>
 	{% block sidebar_content %}
 	{% endblock %}
       </div>
