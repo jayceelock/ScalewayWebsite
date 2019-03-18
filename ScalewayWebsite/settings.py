@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'cvbz+%2!17d8yt*fqpwuuk^u6$ajn&f_u8^=1as@bv&0k7^p#k'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['jclock.co.uk', '127.0.0.1', 'localhost', '0.0.0.0']
+ALLOWED_HOSTS = ['www.jclock.co.uk', 'jclock.co.uk', '127.0.0.1', 'localhost', '0.0.0.0']
 
 
 # Application definition
