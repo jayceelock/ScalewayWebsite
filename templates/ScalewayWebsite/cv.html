@@ -15,9 +15,10 @@
     <h1>Curriculum Vitae</h1>
   </div>
   <div class="col-md-12">
-    <a href="{% static 'ScalewayWebsite/cv/cv.pdf' %}">
-      <img src="{% static 'ScalewayWebsite/cv/cv.png' %}" class="img-responsive" width="100%">
-    </a>
+    {% comment %}<a href="{% static 'ScalewayWebsite/cv/cv.pdf' %}">{% endcomment %}
+      {% comment %}<img src="{% static 'ScalewayWebsite/cv/cv.png' %}" class="img-responsive" width="100%">{% endcomment %}
+    {% comment %}</a>{% endcomment %}
+    <iframe height="100%" width=100% src="{% static 'ScalewayWebsite/cv/cv.pdf' %}"></iframe>
   </div>
 </div>
 
