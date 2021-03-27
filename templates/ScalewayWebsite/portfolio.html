@@ -12,22 +12,54 @@
 
 <div class="row">
   <div class="page-header">
-    <h1>Portfolio</h1>
+    <h1>Project Portfolio</h1>
   </div>
   <div class="row">
     <div class="col-md-12">
       <h4>Current and Ongoing</h4>
-      <hr>
       <div class="panel-group">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h5 class="panel-title">
 	      <a data-toggle="collapse" href="#ongoing1">
-                ActiVis
+		Home Server
 	      </a>
             </h5>
           </div>
           <div id="ongoing1" class="panel-collapse collapse">
+            <div class="panel-body">
+              <p class="text-justify">
+              <b>Description: </b><br>
+	        In an attempt to learn how the internet works, I decided to build my own website from scratch and host it on a VPS - this website actually! I built the site in Python using the Django framework and have been hosting it since 2018 or so. In 2019, I started to take an interest in taking back control over my own data and moved to Dockerise my entire webstack so that I can easily include other services, such as Gitea and Syncthing servers to sync all my data. 
+
+		Right now I'm in the process of migrating the entire site onto a local machine I built from spare parts and hosting it from my home. 
+              </p>
+            </div>
+            <div class="panel-footer">
+              <p>
+                <a target="_blank" href="https://github.com/yassiezar/server-docker">Project Page</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> <!-- End of paper div -->
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Past</h4>
+      <hr>
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h5 class="panel-title">
+	      <a data-toggle="collapse" href="#past1">
+                ActiVis
+	      </a>
+            </h5>
+          </div>
+          <div id="past1" class="panel-collapse collapse">
             <div class="panel-body">
               <p class="text-justify">
               <b>Description: </b><br>
@@ -43,22 +75,16 @@
           </div>
         </div>
       </div> <!-- End of paper div -->
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <h4>Past</h4>
-      <hr>
       <div class="panel-group">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h5 class="panel-title">
-              <a data-toggle="collapse" href="#past1">
+              <a data-toggle="collapse" href="#past2">
                 Quadcopter Pose Estimation Accuracy
               </a>
             </h5>
           </div>
-          <div id="past1" class="panel-collapse collapse">
+          <div id="past2" class="panel-collapse collapse">
             <div class="panel-body">
               <p class="text-justify">
                 <b>Description: </b><br>
@@ -78,12 +104,12 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h5 class="panel-title">
-              <a data-toggle="collapse" href="#past2">
+              <a data-toggle="collapse" href="#past3">
                 NFCPay
               </a>
             </h5>
           </div>
-          <div id="past2" class="panel-collapse collapse">
+          <div id="past3" class="panel-collapse collapse">
             <div class="panel-body">
               <p class="text-justify">
                 <b>Description: </b><br>
@@ -105,62 +131,62 @@
     <div class="col-md-12">
       <h4>Side Projects</h4>
       <hr>
+      {% comment %}<div class="panel-group">{% endcomment %}
+        {% comment %}<div class="panel panel-default">{% endcomment %}
+          {% comment %}<div class="panel-heading">{% endcomment %}
+            {% comment %}<h5 class="panel-title">{% endcomment %}
+              {% comment %}<a data-toggle="collapse" href="#side1">{% endcomment %}
+                {% comment %}Theremin{% endcomment %}
+              {% comment %}</a>{% endcomment %}
+            {% comment %}</h5>{% endcomment %}
+          {% comment %}</div>{% endcomment %}
+          {% comment %}<div id="side1" class="panel-collapse collapse">{% endcomment %}
+            {% comment %}<div class="panel-body">{% endcomment %}
+              {% comment %}<p class="text-justify">{% endcomment %}
+                {% comment %}<b>Description: </b><br>{% endcomment %}
+                {% comment %}A virtual theremin instrument based on an Android app and a cellphone camera.{% endcomment %}
+              {% comment %}</p>{% endcomment %}
+            {% comment %}</div>{% endcomment %}
+            {% comment %}<div class="panel-footer">{% endcomment %}
+              {% comment %}<p>{% endcomment %}
+              {% comment %}</p>{% endcomment %}
+            {% comment %}</div>{% endcomment %}
+          {% comment %}</div>{% endcomment %}
+        {% comment %}</div>{% endcomment %}
+      {% comment %}</div> <!-- End of paper div -->{% endcomment %}
+      {% comment %}<div class="panel-group">{% endcomment %}
+        {% comment %}<div class="panel panel-default">{% endcomment %}
+          {% comment %}<div class="panel-heading">{% endcomment %}
+            {% comment %}<h5 class="panel-title">{% endcomment %}
+              {% comment %}<a data-toggle="collapse" href="#side2">{% endcomment %}
+                {% comment %}Trackeroo{% endcomment %}
+              {% comment %}</a>{% endcomment %}
+            {% comment %}</h5>{% endcomment %}
+          {% comment %}</div>{% endcomment %}
+          {% comment %}<div id="side2" class="panel-collapse collapse">{% endcomment %}
+            {% comment %}<div class="panel-body">{% endcomment %}
+              {% comment %}<p class="text-justify">{% endcomment %}
+                {% comment %}<b>Description: </b><br>{% endcomment %}
+		{% comment %}An Android app and server back-end that tracks any food/drink specials in a user's area. I've halted development on this, so the source code is not available at this time. {% endcomment %}
+              {% comment %}</p>{% endcomment %}
+            {% comment %}</div>{% endcomment %}
+            {% comment %}<div class="panel-footer">{% endcomment %}
+              {% comment %}<p>{% endcomment %}
+              {% comment %}</p>{% endcomment %}
+            {% comment %}</div>{% endcomment %}
+          {% comment %}</div>{% endcomment %}
+        {% comment %}</div>{% endcomment %}
+      {% comment %}</div> <!-- End of paper div -->{% endcomment %}
       <div class="panel-group">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h5 class="panel-title">
               <a data-toggle="collapse" href="#side1">
-                Theremin
-              </a>
-            </h5>
-          </div>
-          <div id="side1" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p class="text-justify">
-                <b>Description: </b><br>
-                A virtual theremin instrument based on an Android app and a cellphone camera.
-              </p>
-            </div>
-            <div class="panel-footer">
-              <p>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> <!-- End of paper div -->
-      <div class="panel-group">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h5 class="panel-title">
-              <a data-toggle="collapse" href="#side2">
-                Trackeroo
-              </a>
-            </h5>
-          </div>
-          <div id="side2" class="panel-collapse collapse">
-            <div class="panel-body">
-              <p class="text-justify">
-                <b>Description: </b><br>
-		An Android app and server back-end that tracks any food/drink specials in a user's area. I've halted development on this, so the source code is not available at this time. 
-              </p>
-            </div>
-            <div class="panel-footer">
-              <p>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> <!-- End of paper div -->
-      <div class="panel-group">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h5 class="panel-title">
-              <a data-toggle="collapse" href="#side3">
 		TrainLine
               </a>
             </h5>
           </div>
-          <div id="side3" class="panel-collapse collapse">
+          <div id="side1" class="panel-collapse collapse">
             <div class="panel-body">
               <p class="text-justify">
                 <b>Description: </b><br>
@@ -179,12 +205,12 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h5 class="panel-title">
-              <a data-toggle="collapse" href="#side4">
+              <a data-toggle="collapse" href="#side2">
 		Echo Locate
               </a>
             </h5>
           </div>
-          <div id="side4" class="panel-collapse collapse">
+          <div id="side2" class="panel-collapse collapse">
             <div class="panel-body">
               <p class="text-justify">
                 <b>Description: </b><br>
@@ -203,12 +229,12 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h5 class="panel-title">
-              <a data-toggle="collapse" href="#side5">
+              <a data-toggle="collapse" href="#side3">
 		PiLock
               </a>
             </h5>
           </div>
-          <div id="side5" class="panel-collapse collapse">
+          <div id="side3" class="panel-collapse collapse">
             <div class="panel-body">
               <p class="text-justify">
                 <b>Description: </b><br>
